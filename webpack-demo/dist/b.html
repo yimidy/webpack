@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webpack demo b</title>
+     <!--引用script type="text/css" src="%= htmlWebpackPlugin.files.chunks.common.entry %"这个来指定</script>-->
+    <style type="text/javascript">
+        /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "http://yiffi.xyz";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/script/common.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/script/common.js":
+/*!******************************!*\
+  !*** ./src/script/common.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function common(){\r\n    console.log(\"I'm common!\");\r\n}\r\ncommon();\n\n//# sourceURL=webpack:///./src/script/common.js?");
+
+/***/ })
+
+/******/ });
+    </style>
+</head>
+<body>
+<div id="demo">webpack demo</div>
+Sat Mar 17 2018 14:22:32 GMT+0800 (中国标准时间)
+
+<!--
+files
+
+options
+-->
+
+<!--
+  publicPath :"http://yiffi.xyz/"
+
+  chunks :{"b":{"size":50,"entry":"http://yiffi.xyz/js/b.js","hash":"394111bbc4da32fb39a5","css":[]},"common":{"size":65,"entry":"http://yiffi.xyz/js/common.js","hash":"3faa0259b5e58d322504","css":[]}}
+
+  js :["http://yiffi.xyz/js/b.js","http://yiffi.xyz/js/common.js"]
+
+  css :[]
+
+  manifest :
+-->
+
+
+  
+<script type="text/javascript" src="http://yiffi.xyz/js/b.js"></script>
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+     <!--引用script type="text/css" src="%= htmlWebpackPlugin.files.chunks.common.entry %"这个来指定</script>-->
+    <style type="text/javascript">
+        <%=  compilation.assets[htmlWebpackPlugin.files.chunks.common.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+    </style>
+</head>
+<body>
+<div id="demo">webpack demo</div>
+<%= htmlWebpackPlugin.options.data %>
+
+<!--<%  for(var key in htmlWebpackPlugin){ %>
+<%= key %>
+<% } %>-->
+
+<!--<%  for(var key in htmlWebpackPlugin.files){ %>
+  <%= key %> :<%= JSON.stringify(htmlWebpackPlugin.files[key]) %>
+<% } %>-->
+
+<% for(var key in htmlWebpackPlugin.files.chunks){ %>
+  <% if(key != 'common'){ %>
+<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[key].entry %>"></script>
+  <% } %>
+<% } %>
+</body>
+</html>
